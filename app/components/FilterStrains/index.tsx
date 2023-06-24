@@ -49,7 +49,7 @@ export default function FilterStrains() {
         ))}
       </div>
 
-      <div className="w-[359px] h-[46px] relative">
+      <div>
         {buttons.map((label, index) => (
           <div
             key={index}

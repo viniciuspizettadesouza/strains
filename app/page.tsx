@@ -1,19 +1,22 @@
 import Banner from "./components/Banner";
 import FilterStrains from "./components/FilterStrains";
 import Header from "./components/Header";
+import ListStrains from "./components/ListStrains";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <Header />
+    <>
+      <main className="flex min-h-screen flex-col items-center justify-between bg-white	">
+        <Header />
 
-      <Banner />
+        <Banner />
 
-      <FilterStrains />
+        <FilterStrains />
 
-      <section className="w-full px-5 lg:px-10 grid gap-y-10 lg:gap-y-12 mx-auto  max-w-screen-2xl">
-        strains
-      </section>
-    </main>
+        <ListStrains />
+      </main>
+      <Footer />
+    </>
   );
 }

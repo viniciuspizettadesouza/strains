@@ -1,15 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function IndexPage() {
+export default function Header() {
   return (
-    <header className="w-full px-5 grid gap-y-10 mx-auto animate-fade-in sticky">
+    <header className="w-full px-5 grid gap-y-10 mx-auto animate-fade-in sticky top-1 bg-white drop-shadow-md before:opacity-0">
       <section className="w-full px-5 grid col-start-1 col-end-5 mx-auto py-6 grid-flow-col items-center justify-between grid-cols-header-collapsed gap-y-6 gap-x-6">
-        <Link
-          className="inline-grid"
-          href="/"
-          title="Leafwell"
-        >
+        <Link className="inline-grid" href="/" title="Leafwell">
           <Image
             width="40"
             height="34"
@@ -92,5 +88,3 @@ function IndexPage() {
     </header>
   );
 }
-
-export default IndexPage;
