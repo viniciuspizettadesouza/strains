@@ -1,6 +1,6 @@
 import CardStrains from "../CardStrains";
 
-export default function ListStrains() {
+const ListStrains = () => {
   const strain = {
     id: "cG9zdDo0NzgwMw==",
     title: "A-Dub",
@@ -61,30 +61,32 @@ export default function ListStrains() {
   };
 
   return (
-    <section className="bg-zinc-100 w-full">
-        <div>
-          <ul className="flex justify-center gap-5">
-            <li className="opacity-30 text-neutral-950 text-[19px] font-normal leading-loose">
-              Prev
-            </li>
-            <li className="text-neutral-950 text-[19px] font-normal leading-loose">
-              1
-            </li>
-            <li className="opacity-30 text-neutral-950 text-[19px] font-normal leading-loose">
-              2
-            </li>
-            <li className="opacity-30 text-neutral-950 text-[19px] font-normal leading-loose">
-              3
-            </li>
-            <li className="text-neutral-950 text-[19px] font-normal leading-loose">
-              Next
-            </li>
-          </ul>
-        </div>
-        <div className="w-full px-5 grid gap-y-10 mx-auto py-10 max-w-screen-2xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <CardStrains strain={strain} />
-          <CardStrains strain={strain} />
-        </div>
+    <section className="w-full bg-zinc-100">
+      <div>
+        <ul className="flex justify-center gap-5">
+          <li className="text-[19px] font-normal leading-loose text-neutral-950 opacity-30">
+            Prev
+          </li>
+          <li className="text-[19px] font-normal leading-loose text-neutral-950">
+            1
+          </li>
+          <li className="text-[19px] font-normal leading-loose text-neutral-950 opacity-30">
+            2
+          </li>
+          <li className="text-[19px] font-normal leading-loose text-neutral-950 opacity-30">
+            3
+          </li>
+          <li className="text-[19px] font-normal leading-loose text-neutral-950">
+            Next
+          </li>
+        </ul>
+      </div>
+      <div className="mx-auto grid w-full max-w-screen-2xl gap-6 gap-y-10 px-5 py-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <CardStrains strain={strain} />
+        <CardStrains strain={strain} />
+      </div>
     </section>
   );
-}
+};
+
+export default ListStrains;

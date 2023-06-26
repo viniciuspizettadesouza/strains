@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+const Header = () => {
   return (
-    <header className="w-full px-5 grid gap-y-10 mx-auto animate-fade-in sticky top-1 bg-white drop-shadow-md before:opacity-0">
-      <section className="w-full px-5 grid col-start-1 col-end-5 mx-auto py-6 grid-flow-col items-center justify-between grid-cols-header-collapsed gap-y-6 gap-x-6">
+    <header className="animate-fade-in sticky top-1 mx-auto grid w-full gap-y-10 bg-white px-5 drop-shadow-md before:opacity-0">
+      <section className="grid-cols-header-collapsed col-start-1 col-end-5 mx-auto grid w-full grid-flow-col items-center justify-between gap-x-6 gap-y-6 px-5 py-6">
         <Link className="inline-grid" href="/" title="Leafwell">
           <Image
             width="40"
@@ -16,7 +16,7 @@ export default function Header() {
           <Image
             width="128"
             height="18"
-            className="col-start-1 row-start-1 h-auto max-w-full hidden md:inline-grid"
+            className="col-start-1 row-start-1 hidden h-auto max-w-full md:inline-grid"
             src="/icon-mobile.svg"
             alt=""
           />
@@ -26,7 +26,7 @@ export default function Header() {
             <li>
               <Link
                 href="/blog/"
-                className="text-neutral-950 text-3.5 font-normal"
+                className="text-3.5 font-normal text-neutral-950"
               >
                 Medical cannabis
               </Link>
@@ -34,7 +34,7 @@ export default function Header() {
             <li>
               <Link
                 href="/research/"
-                className="text-neutral-950 text-3.5 font-normal"
+                className="text-3.5 font-normal text-neutral-950"
               >
                 Learn with Leafwell
               </Link>
@@ -42,7 +42,7 @@ export default function Header() {
             <li>
               <Link
                 href="/partner-with-leafwell/"
-                className="text-neutral-950 text-3.5 font-normal"
+                className="text-3.5 font-normal text-neutral-950"
               >
                 Become a Partner
               </Link>
@@ -50,19 +50,19 @@ export default function Header() {
           </ul>
         </nav>
         <button
-          className="select-none inline-grid gap-x-2 grid-flow-col items-center justify-center text-center text-sm font-heading transition-colors focus:outline-none outline-none cursor-pointer leading-none border py-3 px-3 bg-white border-white hover:border-green hover:bg-green hover:text-black rounded-full p-reset w-10 h-10 justify-self-end"
+          className="font-heading hover:border-green hover:bg-green p-reset inline-grid h-10 w-10 cursor-pointer select-none grid-flow-col items-center justify-center gap-x-2 justify-self-end rounded-full border border-white bg-white px-3 py-3 text-center text-sm leading-none outline-none transition-colors hover:text-black focus:outline-none"
           aria-label="Toggle Search"
         >
           <Image
             src="https://leafwell.com/search.svg"
-            className="w-4 m-auto"
+            className="m-auto w-4"
             alt="Toggle Search"
             width="19"
             height="19"
           />
         </button>
         <Link
-          className="relative underline-offset-small cursor-pointer transition-all duration-200 focus:outline-none outline-none no-underline hover:underline group inline-grid grid-flow-col gap-x-2 justify-start items-center font-heading text-sm justify-self-center"
+          className="underline-offset-small font-heading group relative inline-grid cursor-pointer grid-flow-col items-center justify-start gap-x-2 justify-self-center text-sm no-underline outline-none transition-all duration-200 hover:underline focus:outline-none"
           target="_blank"
           rel="noopener"
           href="https://medicalcard.io/patients/login"
@@ -77,14 +77,16 @@ export default function Header() {
           />
         </Link>
         <Link
-          className="cursor-pointer w-[151px] h-[47px] px-6 py-3.5 bg-gradient-to-bl from-emerald-400 via-emerald-400 to-violet-300 rounded-md justify-center items-start gap-2.5 inline-flex hover:from-green-400 hover:to-green-400"
+          className="inline-flex h-[47px] w-[151px] cursor-pointer items-start justify-center gap-2.5 rounded-md bg-gradient-to-bl from-emerald-400 via-emerald-400 to-violet-300 px-6 py-3.5 hover:from-green-400 hover:to-green-400"
           href="/medical-card/"
         >
-          <span className="text-center text-neutral-950 text-3.5 font-normal">
+          <span className="text-3.5 text-center font-normal text-neutral-950">
             Get your card
           </span>
         </Link>
       </section>
     </header>
   );
-}
+};
+
+export default Header;

@@ -1,48 +1,31 @@
+"use client";
+
 import React from "react";
+import { getClient } from "../../lib/getClient";
+import { useQuery } from "@apollo/client";
+import { buttons, Alphabet, StrainQuery } from "@/app/lib/constants";
 
 export default function FilterStrains() {
-  const buttons = ["All", "Indica", "Sativa", "Hybrid"];
-  const alphabet = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ];
+  const client = getClient();
+  const { loading, data } = useQuery(StrainQuery, { client });
+  if (loading) {
+    return <p>Loading</p>;
+  }
 
   return (
-    <section className="w-full px-5 grid gap-y-10 mx-auto max-w-screen-2xl">
-      <p className="text-neutral-950 text-[14px] font-normal leading-relaxed">
+    <section className="mx-auto grid w-full max-w-screen-2xl gap-y-10 px-5">
+      <div>API response: {JSON.stringify(data)}</div>
+
+      <p className="text-[14px] font-normal leading-relaxed text-neutral-950">
         A - Z Strains
       </p>
       <div>
-        {alphabet.map((letter, index) => (
+        {Object.values(Alphabet).map((letter, index) => (
           <button
             key={index}
-            className={`mr-3 bg-white rounded-[40px] border border-indigo-300 justify-center items-center inline-flex`}
+            className={`mr-3 inline-flex items-center justify-center rounded-[40px] border border-indigo-300 bg-white`}
           >
-            <span className="flex flex-col justify-center w-[38px] h-[36px] text-neutral-950 text-[19px] font-normal">
+            <span className="flex h-[36px] w-[38px] flex-col justify-center text-[19px] font-normal text-neutral-950">
               {letter}
             </span>
           </button>
@@ -57,15 +40,15 @@ export default function FilterStrains() {
               index === 0 ? 65 : index === 1 ? 86 : index === 2 ? 87 : 91
             }px] h-[46px] px-6 py-[10px] left-[${index * 96}px] top-[0px] bg-${
               index === 0 ? "violet" : "white"
-            }-300 rounded-lg border border border border border-indigo-300 justify-center items-center gap-[10px] inline-flex`}
+            }-300 inline-flex items-center justify-center gap-[10px] rounded-lg border border border border border-indigo-300`}
           >
-            <div className="text-neutral-950 text-[14px] font-normal leading-relaxed">
+            <div className="text-[14px] font-normal leading-relaxed text-neutral-950">
               {label}
             </div>
           </div>
         ))}
 
-        <button className="text-neutral-950 text-[14px] font-normal underline leading-relaxed">
+        <button className="text-[14px] font-normal leading-relaxed text-neutral-950 underline">
           Clear selection
         </button>
       </div>
