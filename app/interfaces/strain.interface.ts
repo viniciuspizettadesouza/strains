@@ -5,22 +5,6 @@ export default interface StrainInterface {
     uri: string;
     date: string;
     modified: string;
-    featuredImage: {
-      node: {
-        altText: string;
-        title: string;
-        id: string;
-        sourceUrl: string;
-        srcSet: string;
-        mediaDetails: {
-          width: number;
-          height: number;
-          __typename: string;
-        };
-        __typename: string;
-      };
-      __typename: string;
-    };
     strainTypes: {
       nodes: {
         name: string;

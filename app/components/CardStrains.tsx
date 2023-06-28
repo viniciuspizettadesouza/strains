@@ -11,13 +11,13 @@ const CardStrains: React.FC<StrainInterface> = ({ strain }) => {
           </div>
         </div>
 
-        <Image
+        {/* <Image
           width={20}
           height={20}
           className="mx-auto h-40 w-40"
           src={strain.featuredImage.node.sourceUrl}
           alt="strain"
-        />
+        /> */}
 
         <div className="text-[19px] font-normal leading-loose text-neutral-950">
           {strain.title}

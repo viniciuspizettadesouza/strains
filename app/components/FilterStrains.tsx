@@ -1,21 +1,24 @@
 "use client";
 
-import React from "react";
-import { getClient } from "../../lib/getClient";
+import { StrainContext } from "../contexts/strain.context";
+import React, { useContext } from "react";
 import { useQuery } from "@apollo/client";
-import { buttons, Alphabet, StrainQuery } from "@/app/lib/constants";
+import { getClient } from "../lib/getClient";
+import { buttons, Alphabet, SearchStrainByString } from "@/app/lib/constants";
 
 export default function FilterStrains() {
+  const { state, setValue } = useContext(StrainContext);
+
   const client = getClient();
-  const { loading, data } = useQuery(StrainQuery, { client });
-  if (loading) {
-    return <p>Loading</p>;
-  }
+  useQuery(SearchStrainByString, {
+    client,
+    onCompleted: (data) => {
+      setValue(data);
+    },
+  });
 
   return (
     <section className="mx-auto grid w-full max-w-screen-2xl gap-y-10 px-5">
-      <div>API response: {JSON.stringify(data)}</div>
-
       <p className="text-[14px] font-normal leading-relaxed text-neutral-950">
         A - Z Strains
       </p>
@@ -40,7 +43,7 @@ export default function FilterStrains() {
               index === 0 ? 65 : index === 1 ? 86 : index === 2 ? 87 : 91
             }px] h-[46px] px-6 py-[10px] left-[${index * 96}px] top-[0px] bg-${
               index === 0 ? "violet" : "white"
-            }-300 inline-flex items-center justify-center gap-[10px] rounded-lg border border border border border-indigo-300`}
+            }-300 inline-flex items-center justify-center gap-[10px] rounded-lg border-indigo-300`}
           >
             <div className="text-[14px] font-normal leading-relaxed text-neutral-950">
               {label}
