@@ -4,8 +4,8 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['admin.leafwell.com'],
+    domains: ["admin.leafwell.com"],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
