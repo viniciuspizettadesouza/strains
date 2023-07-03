@@ -4,6 +4,9 @@ import React, { useState, createContext, ReactNode } from "react";
 import { ContentNode } from "../interfaces/strains.interface";
 
 export interface StateType {
+  strains?: {
+    nodes: ContentNode[];
+  };
   contentNodes: {
     __typename: string;
     pageInfo: {
@@ -12,6 +15,18 @@ export interface StateType {
       hasNextPage: boolean;
     };
     nodes: ContentNode[];
+    extra: {
+      debug: any[];
+      queryAnalyzer: {
+        keys: string;
+        keysLength: number;
+        keysCount: number;
+        skippedKeys: string;
+        skippedKeysSize: number;
+        skippedKeysCount: number;
+        skippedTypes: any[];
+      };
+    };
   };
 }
 
@@ -24,6 +39,18 @@ const initialState: StateType = {
       hasNextPage: false,
     },
     nodes: [],
+    extra: {
+      debug: [],
+      queryAnalyzer: {
+        keys: "",
+        keysLength: 0,
+        keysCount: 0,
+        skippedKeys: "",
+        skippedKeysSize: 0,
+        skippedKeysCount: 0,
+        skippedTypes: [],
+      },
+    },
   },
 };
 
