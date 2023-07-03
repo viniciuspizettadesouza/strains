@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { getClient } from "../lib/getClient";
 import { buttons, SearchStrainByString } from "@/app/lib/constants";
-import InitialFilter from "./InitialFilter";
+import FilterByInitial from "./FilterByInitial";
 
 const FilterStrains = () => {
   const { state, setValue } = useContext(StrainContext);
@@ -38,7 +38,7 @@ const FilterStrains = () => {
 
   return (
     <section className="mx-auto mb-10 grid w-full max-w-screen-2xl gap-y-10 px-5">
-      <InitialFilter />
+      <FilterByInitial />
 
       <div className="flex">
         <div className="flex w-1/2 gap-2">

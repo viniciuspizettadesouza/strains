@@ -1,12 +1,10 @@
-"use client";
-
 import { StrainContext } from "../contexts/strain.context";
 import React, { useContext, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { getClient } from "../lib/getClient";
 import { Alphabet, SearchStrainByInitial } from "@/app/lib/constants";
 
-const InitialFilter = () => {
+const FilterByInitial = () => {
   const { state, setValue } = useContext(StrainContext);
   const [initial, setInitial] = useState("");
 
@@ -37,11 +35,19 @@ const InitialFilter = () => {
       {Object.values(Alphabet).map((letter, index) => (
         <button
           key={index}
-          className={`mr-3 inline-flex items-center justify-center rounded-full border border-violet-300 bg-white`}
+          className={`mr-3 inline-flex items-center justify-center rounded-full border border-violet-300 ${
+            initial === letter
+              ? "bg-green-100 border-green-300"
+              : "bg-white hover:bg-violet-400 text-white"
+          }`}
           onClick={handleOptionChange}
           value={letter}
         >
-          <span className="flex h-8 w-8 flex-col justify-center text-lg text-neutral-950">
+          <span
+            className={`flex h-8 w-8 flex-col justify-center text-lg ${
+              initial === letter ? "" : "text-neutral-950"
+            } ${initial !== letter && "hover:text-white"}`}
+          >
             {letter}
           </span>
         </button>
@@ -50,4 +56,4 @@ const InitialFilter = () => {
   );
 };
 
-export default InitialFilter;
+export default FilterByInitial;
