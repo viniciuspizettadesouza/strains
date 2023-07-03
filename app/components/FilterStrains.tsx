@@ -19,7 +19,7 @@ export default function FilterStrains() {
       search: "",
       after: null,
       limit: 12,
-      titleStartsWith: "v",
+      titleStartsWith: "",
     },
     client,
     onCompleted: (data) => {
