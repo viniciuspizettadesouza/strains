@@ -3,14 +3,15 @@
 import { useContext } from "react";
 import CardStrains from "./CardStrains";
 import { StrainContext } from "../contexts/strain.context";
-import { ContentNode } from "../interfaces/strains.interface copy";
+import { ContentNode } from "../interfaces/strains.interface";
 import Pagination from "./Pagination";
 
 const ListStrains: React.FC = () => {
   const { state, setValue } = useContext(StrainContext);
-  let nodes = [];
+  let nodes: ContentNode[] = [];
 
   if (state.strains) {
+    console.log("state.strains", state);
     nodes = state.strains.nodes;
   } else {
     nodes = state.contentNodes.nodes;

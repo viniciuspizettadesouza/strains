@@ -1,6 +1,10 @@
 import React from "react";
 
-const Breadcrumb = ({ items }) => {
+interface BreadcrumbProps {
+  items: string[];
+}
+
+const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
     <nav className="text-sm font-medium" aria-label="Breadcrumb">
       <ol className="inline-flex list-none p-0">

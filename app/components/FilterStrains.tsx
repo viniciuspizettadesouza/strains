@@ -7,7 +7,7 @@ import { getClient } from "../lib/getClient";
 import { buttons, SearchStrainByString } from "@/app/lib/constants";
 import InitialFilter from "./InitialFilter";
 
-export default function FilterStrains() {
+const FilterStrains = () => {
   const { state, setValue } = useContext(StrainContext);
   const [strainType, setStrainType] = useState("");
 
@@ -27,9 +27,13 @@ export default function FilterStrains() {
     },
   });
 
-  const handleOptionChange = (event) => {
-    console.log("handleOptionChange", event.target.value);
-    setStrainType(event.target.value);
+  const handleOptionChange = (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    console.log("handleOptionChange", (event.target as HTMLInputElement).value);
+    setStrainType((event.target as HTMLInputElement).value);
   };
 
   return (
@@ -69,4 +73,6 @@ export default function FilterStrains() {
       </div>
     </section>
   );
-}
+};
+
+export default FilterStrains;

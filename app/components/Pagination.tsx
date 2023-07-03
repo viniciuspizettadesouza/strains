@@ -1,11 +1,4 @@
-"use client";
-
-import { useContext } from "react";
-import CardStrains from "./CardStrains";
-import { StrainContext } from "../contexts/strain.context";
-import { ContentNode } from "../interfaces/strains.interface copy";
-
-const Pagination = ({ totalPages }) => {
+const Pagination = ({ totalPages }: { totalPages: number }) => {
   return (
     <section className="w-full bg-zinc-100">
       <ul className="flex justify-center gap-5">

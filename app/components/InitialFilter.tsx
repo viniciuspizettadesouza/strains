@@ -6,9 +6,9 @@ import { useQuery } from "@apollo/client";
 import { getClient } from "../lib/getClient";
 import { Alphabet, SearchStrainByInitial } from "@/app/lib/constants";
 
-export default function InitialFilter() {
+const InitialFilter = () => {
   const { state, setValue } = useContext(StrainContext);
-  const [initial, setInitital] = useState("");
+  const [initial, setInitial] = useState("");
 
   const client = getClient();
   const { loading, error, data } = useQuery(SearchStrainByInitial, {
@@ -24,8 +24,9 @@ export default function InitialFilter() {
 
   console.log(data);
 
-  const handleOptionChange = (event) => {
-    setInitital(event.target.innerHTML);
+  const handleOptionChange = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const target = event.target as HTMLButtonElement;
+    setInitial(target.innerHTML);
   };
 
   return (
@@ -47,4 +48,6 @@ export default function InitialFilter() {
       ))}
     </div>
   );
-}
+};
+
+export default InitialFilter;

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, createContext, ReactNode } from "react";
-import { ContentNode } from "../interfaces/strains.interface copy";
+import { ContentNode } from "../interfaces/strains.interface";
 
 export interface StateType {
   contentNodes: {
@@ -33,7 +33,7 @@ type SetValueType = (
 
 interface StrainContextType {
   state: StateType;
-  setValue: React.Dispatch<React.SetStateAction<StateType>>;
+  setValue: SetValueType;
 }
 
 export const StrainContext = createContext<StrainContextType>({
