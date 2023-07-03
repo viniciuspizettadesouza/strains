@@ -3,11 +3,11 @@ import React from "react";
 const Banner = () => {
   return (
     <section className="mx-auto grid w-full max-w-3xl gap-y-10 px-5 py-10 text-center">
-      <h1 className="text-center text-[40px] font-normal leading-10 text-neutral-950">
+      <h1 className="text-center text-4xl leading-10 text-neutral-950">
         Cannabis Strain Directory
       </h1>
 
-      <article className="text-center text-[14px] font-normal leading-relaxed text-neutral-950">
+      <article className="text-center text-xs leading-relaxed text-neutral-950">
         <p>
           A marijuana strain is a classification that determines a plant’s
           chemotype (chemical profile), phenotype (physical appearance), and

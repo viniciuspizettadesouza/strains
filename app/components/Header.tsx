@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="animate-fade-in sticky top-1 mx-auto grid w-full gap-y-10 bg-white px-5 drop-shadow-md before:opacity-0">
+    <header className="mx-auto w-full gap-y-10 bg-white px-5">
       <section className="grid-cols-header-collapsed col-start-1 col-end-5 mx-auto grid w-full grid-flow-col items-center justify-between gap-x-6 gap-y-6 px-5 py-6">
         <Link className="inline-grid" href="/" title="Leafwell">
           <Image
@@ -24,25 +24,19 @@ const Header = () => {
         <nav className="mx-auto">
           <ul className="grid grid-flow-col items-center gap-4">
             <li>
-              <Link
-                href="/blog/"
-                className="text-3.5 font-normal text-neutral-950"
-              >
+              <Link href="/blog/" className="text-3.5 text-neutral-950">
                 Medical cannabis
               </Link>
             </li>
             <li>
-              <Link
-                href="/research/"
-                className="text-3.5 font-normal text-neutral-950"
-              >
+              <Link href="/research/" className="text-3.5 text-neutral-950">
                 Learn with Leafwell
               </Link>
             </li>
             <li>
               <Link
                 href="/partner-with-leafwell/"
-                className="text-3.5 font-normal text-neutral-950"
+                className="text-3.5 text-neutral-950"
               >
                 Become a Partner
               </Link>
@@ -77,10 +71,10 @@ const Header = () => {
           />
         </Link>
         <Link
-          className="inline-flex h-[47px] w-[151px] cursor-pointer items-start justify-center gap-2.5 rounded-md bg-gradient-to-bl from-emerald-400 via-emerald-400 to-violet-300 px-6 py-3.5 hover:from-green-400 hover:to-green-400"
+          className="cursor-pointer items-start justify-center gap-2.5 rounded-md bg-gradient-to-bl from-emerald-400 via-emerald-400 to-violet-300 px-6 py-3.5 hover:from-green-400 hover:to-green-400"
           href="/medical-card/"
         >
-          <span className="text-3.5 text-center font-normal text-neutral-950">
+          <span className="text-3.5 text-center text-neutral-950">
             Get your card
           </span>
         </Link>

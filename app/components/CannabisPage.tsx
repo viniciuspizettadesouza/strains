@@ -78,10 +78,10 @@ const CannabisPage = ({ title }) => {
           />
 
           <div className="relative h-[72px] w-[343px]">
-            <div className="absolute left-0 top-[45px] w-[227px] text-[14px] font-normal leading-relaxed text-neutral-950">
+            <div className="absolute left-0 top-[45px] w-[227px] text-xs font-normal leading-relaxed text-neutral-950">
               Indica
             </div>
-            <div className="absolute left-0 top-0 text-[29px] font-normal leading-10 text-neutral-950">
+            <div className="absolute left-0 top-0 text-3xl font-normal leading-10 text-neutral-950">
               20.0%
             </div>
             <div className="absolute left-0 top-[46px] h-[0px] w-[343px] border border-zinc-100"></div>
@@ -89,10 +89,10 @@ const CannabisPage = ({ title }) => {
           </div>
 
           <div className="relative h-[72px] w-[343px]">
-            <div className="absolute left-0 top-[45px] w-[227px] text-[14px] font-normal leading-relaxed text-neutral-950">
+            <div className="absolute left-0 top-[45px] w-[227px] text-xs font-normal leading-relaxed text-neutral-950">
               Sativa
             </div>
-            <div className="absolute left-0 top-0 text-[29px] font-normal leading-10 text-neutral-950">
+            <div className="absolute left-0 top-0 text-3xl font-normal leading-10 text-neutral-950">
               80.0%
             </div>
             <div className="absolute left-0 top-[46px] h-[0px] w-[343px] border border-zinc-100"></div>
@@ -106,11 +106,11 @@ const CannabisPage = ({ title }) => {
           <p>Aromas</p>
           {aromas.map((text, index) => (
             <React.Fragment key={index}>
-              <span className="text-[43px] leading-10 text-neutral-950">
+              <span className="text-5xl leading-10 text-neutral-950">
                 {text}
               </span>
               {index !== aromas.length - 1 && (
-                <span className="text-[43px] leading-10 text-zinc-400">/</span>
+                <span className="text-5xl leading-10 text-zinc-400">/</span>
               )}
             </React.Fragment>
           ))}
@@ -137,7 +137,7 @@ const CannabisPage = ({ title }) => {
           </div>
         </div>
         <div className="col-span-2">
-          <div className="text-[19px] font-normal leading-loose text-zinc-600">
+          <div className="text-lg font-normal leading-loose text-zinc-600">
             Acapulco Gold is highly sought after for good reason. Users
             experience one of the purest sativa highs known to cannabis. The
             high experienced is both motivating and energizing. The powerful
@@ -157,7 +157,7 @@ const CannabisPage = ({ title }) => {
                 <div className="w-2.5 self-stretch bg-orange-600" />
               </div>
               <div className="flex shrink grow basis-0 items-end justify-start gap-[25px] self-stretch rounded-lg px-[15px] py-2.5">
-                <div className="text-[19px] font-normal leading-loose text-neutral-950">
+                <div className="text-lg font-normal leading-loose text-neutral-950">
                   Beta-Caryophyllene
                 </div>
               </div>
@@ -170,7 +170,7 @@ const CannabisPage = ({ title }) => {
                 <div className="w-2.5 self-stretch bg-stone-500" />
               </div>
               <div className="flex shrink grow basis-0 items-end justify-start gap-[25px] self-stretch rounded-lg px-[15px] py-2.5">
-                <div className="text-[19px] font-normal leading-loose text-neutral-950">
+                <div className="text-lg font-normal leading-loose text-neutral-950">
                   Camphene
                 </div>
               </div>
@@ -183,7 +183,7 @@ const CannabisPage = ({ title }) => {
                 <div className="w-2.5 self-stretch bg-emerald-400" />
               </div>
               <div className="flex shrink grow basis-0 items-end justify-start gap-[25px] self-stretch rounded-lg px-[15px] py-2.5">
-                <div className="text-[19px] font-normal leading-loose text-neutral-950">
+                <div className="text-lg font-normal leading-loose text-neutral-950">
                   Humulene
                 </div>
               </div>
@@ -196,7 +196,7 @@ const CannabisPage = ({ title }) => {
                 <div className="w-2.5 self-stretch bg-green-500" />
               </div>
               <div className="flex shrink grow basis-0 items-end justify-start gap-[25px] self-stretch rounded-lg px-[15px] py-2.5">
-                <div className="text-[19px] font-normal leading-loose text-neutral-950">
+                <div className="text-lg font-normal leading-loose text-neutral-950">
                   Pinene
                 </div>
               </div>
@@ -208,7 +208,7 @@ const CannabisPage = ({ title }) => {
               <div className="w-2.5 self-stretch bg-amber-500" />
             </div>
             <div className="flex shrink grow basis-0 items-end justify-start gap-[25px] self-stretch rounded-lg px-[15px] py-2.5">
-              <div className="text-[19px] font-normal leading-loose text-neutral-950">
+              <div className="text-lg font-normal leading-loose text-neutral-950">
                 Valencene
               </div>
             </div>
@@ -220,30 +220,30 @@ const CannabisPage = ({ title }) => {
         <p>Flavonoids</p>
 
         <div className="w-[1313px]">
-          <span className="text-[43px] font-normal leading-10 text-neutral-950">
+          <span className="text-5xl font-normal leading-10 text-neutral-950">
             Flavonoids are rarely tested for in cannabis at the moment.
             Flavonoids in Strawberry Cough could include anthocyanins,
           </span>
-          <span className="text-[43px] font-normal leading-10 text-neutral-950 underline">
+          <span className="text-5xl font-normal leading-10 text-neutral-950 underline">
             quercetin
           </span>
-          <span className="text-[43px] font-normal leading-10 text-neutral-950"></span>
-          <span className="text-[43px] font-normal leading-10 text-neutral-950 underline">
+          <span className="text-5xl font-normal leading-10 text-neutral-950"></span>
+          <span className="text-5xl font-normal leading-10 text-neutral-950 underline">
             catechin
           </span>
-          <span className="text-[43px] font-normal leading-10 text-neutral-950">
+          <span className="text-5xl font-normal leading-10 text-neutral-950">
             and
           </span>
-          <span className="text-[43px] font-normal leading-10 text-neutral-950 underline">
+          <span className="text-5xl font-normal leading-10 text-neutral-950 underline">
             kaempferol
           </span>
-          <span className="text-[43px] font-normal leading-10 text-neutral-950">
+          <span className="text-5xl font-normal leading-10 text-neutral-950">
             a longside
           </span>
-          <span className="text-[43px] font-normal leading-10 text-neutral-950 underline">
+          <span className="text-5xl font-normal leading-10 text-neutral-950 underline">
             Cannflavin A and Cannflavin B
           </span>
-          <span className="text-[43px] font-normal leading-10 text-neutral-950">
+          <span className="text-5xl font-normal leading-10 text-neutral-950">
             .<br />
           </span>
         </div>

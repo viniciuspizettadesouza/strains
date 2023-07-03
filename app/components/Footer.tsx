@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
         <div className="col-span-2">
           <div>
-            <p className="text-right text-[19px] font-normal leading-loose text-neutral-950">
+            <p className="text-right text-lg leading-loose text-neutral-950">
               Keep updated with our social media
             </p>
             <ul className="flex flex-wrap items-center justify-end  ">
@@ -84,10 +84,10 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <p className="text-[14px] font-bold leading-snug text-neutral-950">
+          <p className="text-xs font-bold leading-snug text-neutral-950">
             Leafwell HQ
           </p>
-          <p className="text-[14px] font-normal leading-snug text-neutral-950">
+          <p className="text-xs leading-snug text-neutral-950">
             Address: 3680 Wilshire Blvd.
             <br />
           </p>
@@ -95,7 +95,7 @@ const Footer = () => {
           <p>Phone: +1 (800) 660-9085</p>
         </div>
         <div className="col-span-2">
-          <p className="text-[14px] font-normal leading-snug text-neutral-950">
+          <p className="text-xs leading-snug text-neutral-950">
             ©2021 Leafwell . Pepperjam Verification. Note: Information on this
             site does not constitute medical advice.
           </p>

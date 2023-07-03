@@ -1,59 +1,71 @@
 "use client";
 
 import { StrainContext } from "../contexts/strain.context";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { getClient } from "../lib/getClient";
-import { buttons, Alphabet, SearchStrainByString } from "@/app/lib/constants";
+import { buttons, SearchStrainByString } from "@/app/lib/constants";
+import InitialFilter from "./InitialFilter";
 
 export default function FilterStrains() {
   const { state, setValue } = useContext(StrainContext);
+  const [strainType, setStrainType] = useState("");
 
   const client = getClient();
-  useQuery(SearchStrainByString, {
+  const { loading, error, data } = useQuery(SearchStrainByString, {
+    fetchPolicy: "no-cache",
+    variables: {
+      languageCode: "DEFAULT",
+      search: "",
+      after: null,
+      limit: 12,
+      titleStartsWith: "v",
+    },
     client,
     onCompleted: (data) => {
       setValue(data);
     },
   });
 
+  const handleOptionChange = (event) => {
+    console.log("handleOptionChange", event.target.value);
+    setStrainType(event.target.value);
+  };
+
   return (
-    <section className="mx-auto grid w-full max-w-screen-2xl gap-y-10 px-5">
-      <p className="text-[14px] font-normal leading-relaxed text-neutral-950">
-        A - Z Strains
-      </p>
-      <div>
-        {Object.values(Alphabet).map((letter, index) => (
+    <section className="mx-auto mb-10 grid w-full max-w-screen-2xl gap-y-10 px-5">
+      <InitialFilter />
+
+      <div className="flex">
+        <div className="flex w-1/2 gap-2">
+          {buttons.map((button, index) => (
+            <label key={index}>
+              <input
+                type="radio"
+                value={button}
+                checked={button === strainType}
+                onChange={handleOptionChange}
+                className="absolute opacity-0"
+              />
+              <div
+                className={`inline-flex items-center justify-center gap-2.5 rounded-lg border border-violet-300 bg-violet-300 px-6 py-2.5 hover:bg-violet-400 hover:text-white ${
+                  button === strainType ? "bg-violet-300" : "bg-white"
+                }`}
+              >
+                <span className="text-xs leading-relaxed">{button}</span>
+              </div>
+            </label>
+          ))}
+        </div>
+        <div className="flex w-1/2 justify-end">
           <button
-            key={index}
-            className={`mr-3 inline-flex items-center justify-center rounded-[40px] border border-indigo-300 bg-white`}
+            className="text-xs leading-relaxed text-neutral-950 underline"
+            value="0"
+            onClick={handleOptionChange}
           >
-            <span className="flex h-[36px] w-[38px] flex-col justify-center text-[19px] font-normal text-neutral-950">
-              {letter}
-            </span>
+            <span>Clear on selection</span>
           </button>
-        ))}
-      </div>
-
-      <div>
-        {buttons.map((label, index) => (
-          <div
-            key={index}
-            className={`w-[${
-              index === 0 ? 65 : index === 1 ? 86 : index === 2 ? 87 : 91
-            }px] h-[46px] px-6 py-[10px] left-[${index * 96}px] top-[0px] bg-${
-              index === 0 ? "violet" : "white"
-            }-300 inline-flex items-center justify-center gap-[10px] rounded-lg border-indigo-300`}
-          >
-            <div className="text-[14px] font-normal leading-relaxed text-neutral-950">
-              {label}
-            </div>
-          </div>
-        ))}
-
-        <button className="text-[14px] font-normal leading-relaxed text-neutral-950 underline">
-          Clear selection
-        </button>
+        </div>
       </div>
     </section>
   );
