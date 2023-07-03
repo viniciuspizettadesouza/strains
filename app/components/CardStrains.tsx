@@ -1,5 +1,5 @@
 import Image from "next/image";
-import StrainInterface from "@/app/interfaces/strain.interface";
+import StrainInterface from "../interfaces/strains.interface";
 import Link from "next/link";
 
 const CardStrains: React.FC<StrainInterface> = ({ strain }) => {

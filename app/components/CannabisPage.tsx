@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Breadcrumb from "./Breadcrumb";
+import { CannabisPageProps } from "../interfaces/props.interface";
 
-const CannabisPage = ({ title }) => {
+const CannabisPage: React.FC<CannabisPageProps> = ({ title }) => {
   const breadcrumbItems = ["Strain directory", "Cannabis Strains"];
   const aromas = ["Fruity", "Kush", "Orange", "Pugent", "Sweet"];
   const flavors = ["Fruity", "Citrus", "Lemon"];

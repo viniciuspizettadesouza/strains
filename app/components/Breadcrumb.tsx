@@ -1,8 +1,5 @@
 import React from "react";
-
-interface BreadcrumbProps {
-  items: string[];
-}
+import { BreadcrumbProps } from "../interfaces/props.interface";
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
